@@ -1,8 +1,77 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #682d97;
+  padding-top: 4px;
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
 }
 
-a {
-  color: #00B7FF;
+.container-fluid {
+  /*background: #ffffff;*/
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#header {
+  background-image: url("http://cdn.wallpapersafari.com/95/75/jcp4zo.jpg");
+  height: 380px;
+}
+
+#info {
+  background: #ffffff;
+}
+
+#contact {
+  background: #682d97;
+}
+
+#slogan {
+  background: #ffffff;
+}
+
+.internal {
+  padding-top: 24px;
+  padding-bottom: 12px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.info-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.info-content {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.contact-title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.contact-content {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.input {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.info-image {
+  width: 36px;
+  height: 36px;
+}
+
+.centered {
+  text-align: center;
+}
+
+#footer {
+  background: #36174f;
 }
