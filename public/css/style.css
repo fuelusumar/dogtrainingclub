@@ -6,7 +6,6 @@ body {
 }
 
 .container-fluid {
-  /*background: #ffffff;*/
   padding: 0;
   margin: 0 auto;
   width: 100%;
@@ -72,6 +71,40 @@ body {
   text-align: center;
 }
 
+.slogan-image {
+  width: 132px;
+  height: 132px;
+}
+
+.slogan-text {
+  padding: 12px;
+  color: #682d97;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.slogan-subtext {
+  padding-top: 24px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.slogan-social-text {
+  padding-bottom: 24px;
+}
+
+.slogan-social-image {
+  margin: 4px;
+  width: 16px;
+  height: 16px;
+}
+
 #footer {
   background: #36174f;
+}
+
+.footer-text {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #cdcdcd;
 }
