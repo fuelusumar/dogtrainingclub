@@ -12,6 +12,7 @@ body {
 }
 
 #header {
+  background-size: cover;
   background-image: url("http://cdn.wallpapersafari.com/95/75/jcp4zo.jpg");
   height: 380px;
 }
@@ -106,5 +107,14 @@ body {
 .footer-text {
   padding-top: 12px;
   padding-bottom: 12px;
-  color: #cdcdcd;
+  color: #8d8d8d;
+}
+
+.alert-container {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  z-index: 9999;
+  border-radius: 0px
 }

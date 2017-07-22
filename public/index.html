@@ -51,12 +51,23 @@
             </p>
           </div>
           <div class="col-xs-12 col-md-6">
-            <form>
-              <input class="form-control input" type="text" name="name" placeholder="Nombre Completo"></input>
-              <input class="form-control input" type="email" name="email" placeholder="Correo Electronico"></input>
-              <textarea class="form-control input" type="text" name="message" placeholder="Mensaje" rows="4"></textarea>
+            <form id="contact-form">
+              <input class="form-control input" type="text" name="name" id="name" placeholder="Nombre Completo"></input>
+              <input class="form-control input" type="email" name="email" id="email" placeholder="Correo Electronico"></input>
+              <textarea class="form-control input" type="text" name="message" id="message" placeholder="Mensaje" rows="4"></textarea>
               <button type="submit" class="btn btn-default input">Enviar</button>
             </form>
+          </div>
+          <div class="alert-container">
+            <div id="success" class="alert alert-success" role="alert">
+              <p>Success</p>
+            </div>
+            <div id="warning" class="alert alert-warning" role="alert">
+              <p>Warning</p>
+            </div>
+            <div id="error" class="alert alert-danger" role="alert">
+              <p>Danger</p>
+            </div>
           </div>
         </div>
       </div>
@@ -66,32 +77,82 @@
             <img class="slogan-image" src="./images/skull-icon-5262.png" />
           </div>
           <div class="col-xs-12 col-md-9">
-            <p class="slogan-text">"Etiam vitae ligula tristique, tempus mauris ut, fermentum dui. Sed lacinia, tellus non volutpat feugiat, turpis purus viverra nisl, ac condimentum mi tellus condimentum"</p>
+            <p class="slogan-text">"Etiam vitae ligula tristique, tempus mauris ut, fermentum dui. Sed lacinia, tellus non volutpat feugiat, turpis
+              purus viverra nisl, ac condimentum mi tellus condimentum"</p>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-12 centered">
             <p class="slogan-subtext">Duis ullamcorper nisi nunc, in scelerisque libero suscipit</p>
-          </div>          
+          </div>
         </div>
         <div class="row">
           <div class="col-xs-12 centered">
             <p class="slogan-social-text">Nulla semper quam nisi, in viverra est fringilla a. Sed sit amet tempor dolor. Mauris efficitur</p>
-          </div>          
+          </div>
         </div>
         <div class="row">
           <div class="col-xs-12 centered">
             <a href="#"><img class="slogan-social-image" src="./images/skull-icon-5262.png" /></a>
             <a href="#"><img class="slogan-social-image" src="./images/skull-icon-5262.png" /></a>
             <a href="#"><img class="slogan-social-image" src="./images/skull-icon-5262.png" /></a>
-          </div>          
+          </div>
         </div>
       </div>
     </div>
-    <div class="internal" id="footer">
+    <div class="internal centered" id="footer">
       <p class="footer-text">Copyright &copy; 2017. Dog Training Club &reg;. Todos los derechos reservados.</p>
     </div>
   </div>
+  <script>
+    $('#success').hide();
+    $('#error').hide();
+    $('#warning').hide();
+    $('#contact-form').submit(function (event) {
+      // Stop form from submitting normally
+      event.preventDefault();
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      var data = {
+        name: $('#name').val(),
+        email: $('#email').val(),
+        message: $('#message').val()
+      };
+      if (data.name.length <= 2) {
+        $('#warning p').text('El nombre debe tener mas de 2 caracteres');
+        $('#warning').show('slow');
+        setTimeout(function () {
+          $('#warning').hide('slow');
+        }, 4000);
+      } else if (!re.test(data.email)) {
+        $('#warning p').text('El correo debe ser valido');
+        $('#warning').show('slow');
+        setTimeout(function () {
+          $('#warning').hide('slow');
+        }, 4000);
+      } else if (data.message.length < 10 || data.message.length > 200) {
+        $('#warning p').text('El mensaje debe contener entre 10 y 200 caracteres');
+        $('#warning').show('slow');
+        setTimeout(function () {
+          $('#warning').hide('slow');
+        }, 4000);
+      } else {
+        $.post("/contact", data)
+          .done(function () {
+            $("#contact-form")[0].reset();
+            $('#success').show('slow');
+            setTimeout(function () {
+              $('#success').hide('slow');
+            }, 4000);
+          })
+          .fail(function () {
+            $('#error').show('slow');
+            setTimeout(function () {
+              $('#error').hide('slow');
+            }, 4000);
+          });
+      }
+    });
+  </script>
 </body>
 
 </html>
