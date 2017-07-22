@@ -18,7 +18,7 @@ router.post('/', function (req, res, next) {
   // setup email data with unicode symbols
   let mailOptions = {
     from: 'info@dogtrainingclub.cl', // sender address
-    to: 'info@dogtrainingclub.cl', // list of receivers
+    to: 'contacto@dogtrainingclub.cl', // list of receivers
     subject: `Mensaje de ${req.body.name} <${req.body.email}>`, // Subject line
     text: req.body.message // plain text body
   };
