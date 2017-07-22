@@ -2,8 +2,6 @@ var express = require('express');
 var nodemailer = require('nodemailer');
 var router = express.Router();
 
-// USER_EMAIL=info@dogtrainingclub.cl USER_PASSWD=21121734fractal npm start
-
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
