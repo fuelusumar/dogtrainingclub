@@ -12,20 +12,45 @@ body {
 }
 
 #header {
+  padding-top: 10%;
+  padding-bottom: 10%;
   background-size: cover;
-  background-image: url("http://cdn.wallpapersafari.com/95/75/jcp4zo.jpg");
-  height: 380px;
+  background-image: url("../images/Imagen_header.png");
+}
+
+.header-title {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-text {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.header-social-image {
+  margin: 8px;
+  width: 32px;
+  height: 32px;
 }
 
 #info {
+  padding-top: 3%;
+  padding-bottom: 3%;
   background: #ffffff;
 }
 
 #contact {
+  padding-top: 3%;
+  padding-bottom: 3%;
   background: #682d97;
 }
 
 #slogan {
+  padding-top: 3%;
+  padding-bottom: 3%;
   background: #ffffff;
 }
 
@@ -64,8 +89,8 @@ body {
 }
 
 .info-image {
-  width: 36px;
-  height: 36px;
+  width: 96px;
+  height: 96px;
 }
 
 .centered {
@@ -73,8 +98,8 @@ body {
 }
 
 .slogan-image {
-  width: 132px;
-  height: 132px;
+  width: 256px;
+  height: 256px;
 }
 
 .slogan-text {
@@ -96,8 +121,8 @@ body {
 
 .slogan-social-image {
   margin: 4px;
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
 }
 
 #footer {
