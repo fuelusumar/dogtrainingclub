@@ -165,7 +165,6 @@
         message: $('#message').val(),
         location: $('#santiago').is(':checked') ? 'santiago' : 'rancagua',
       };
-      console.log(data);
       if (data.name.length <= 2) {
         $('#warning p').text('El nombre debe tener mas de 2 caracteres');
         $('#warning').show('slow');
