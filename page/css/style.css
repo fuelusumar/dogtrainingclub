@@ -143,3 +143,12 @@ body {
   z-index: 9999;
   border-radius: 0px
 }
+
+.radio-input {
+  margin: 6px !important;
+}
+
+.radio-input-label {
+  color: #ffffff;
+  margin-right: 12px;
+}

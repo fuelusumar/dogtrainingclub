@@ -20,7 +20,7 @@ router.post('/', function (req, res, next) {
     from: 'info@dogtrainingclub.cl', // sender address
     to: 'contacto@dogtrainingclub.cl', // list of receivers
     subject: `Mensaje de ${req.body.name} <${req.body.email}>`, // Subject line
-    text: req.body.message // plain text body
+    text: `${req.body.message}\n\nMensaje de ${req.body.name} <${req.body.email}>\n${req.body.location}, chile` // plain text body
   };
   let replyOptions = {
     from: 'info@dogtrainingclub.cl', // sender address
