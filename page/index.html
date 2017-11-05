@@ -24,15 +24,23 @@
       <div class="row">
         <div class="col-xs-12 col-md-6">
           <div>
-            <a href="#"><img src="./images/DTC_header.png" /></a>
+            <a href="#">
+              <img src="./images/DTC_header.png" />
+            </a>
           </div>
           <p class="header-title">Estamos trabajando para ofrecerte lo mejor en adiestramiento canino</p>
           <p class="header-text">Obtén los mejores beneficios del entrenamiento al aire libre y disfruta junto a tu mascota de una correcta convivencia
             dentro y fuera del hogar</p>
           <div>
-            <a href="https://www.instagram.com/dogtrainingclub/"><img class="header-social-image" src="./images/Instagram_Icon_gray.png" /></a>
-            <a href="https://www.facebook.com/DogTrainingClubChile/"><img class="header-social-image" src="./images/Facebook_Icon_gray.png" /></a>
-            <a href="https://www.youtube.com/channel/UCWeaim0GlSOtQ7w9OABU0Zg"><img class="header-social-image" src="./images/Youtube_Icon_gray.png" /></a>
+            <a href="https://www.instagram.com/dogtrainingclub/">
+              <img class="header-social-image" src="./images/Instagram_Icon_gray.png" />
+            </a>
+            <a href="https://www.facebook.com/DogTrainingClubChile/">
+              <img class="header-social-image" src="./images/Facebook_Icon_gray.png" />
+            </a>
+            <a href="https://www.youtube.com/channel/UCWeaim0GlSOtQ7w9OABU0Zg">
+              <img class="header-social-image" src="./images/Youtube_Icon_gray.png" />
+            </a>
           </div>
         </div>
       </div>
@@ -71,10 +79,10 @@
               <input class="form-control input" type="text" name="name" id="name" placeholder="Nombre Completo"></input>
               <input class="form-control input" type="email" name="email" id="email" placeholder="Correo Electronico"></input>
               <textarea class="form-control input" type="text" name="message" id="message" placeholder="Mensaje" rows="4"></textarea>
-              <input checked class=“radio-input” type=“radio” id=“santiago” name=“location” value=“santiago”>
-              <label class=“radio-input-label” for=“santiago”>Santiago</label>
-              <input class=“radio-input” type=“radio” id=“rancagua” name=“location” value=“rancagua”>
-              <label class=“radio-input-label” for=“rancagua”>Rancagua</label>
+              <input type="radio" checked class="radio-input" id="santiago" name="location" value="santiago"></input>
+              <label class="radio-input-label" for="santiago">Santiago</label>
+              <input type="radio" class="radio-input" id="rancagua" name="location" value="rancagua"></input>
+              <label class="radio-input-label" for="rancagua">Rancagua</label>
               <br/>
               <button type="submit" class="btn btn-default input">Enviar</button>
             </form>
@@ -98,16 +106,22 @@
             <img class="slogan-image" src="./images/Logo_Web.png" />
           </div>
           <div class="col-xs-12 col-md-9">
-            <p class="slogan-text">“Somos una empresa de psicologìa y adiestramiento canino, que busca aportar al desarrollo y consolidaciòn de
-              una convivencia armònica entre el dueño y su mascota”</p>
+            <p class="slogan-text">"Somos una empresa de psicologìa y adiestramiento canino, que busca aportar al desarrollo y consolidaciòn de
+              una convivencia armònica entre el dueño y su mascota"</p>
             <div class="centered">
               <p class="slogan-subtext">Conéctate con Nosotros y se miembro del Club</p>
               <p class="slogan-social-text">Síguenos en nuestras redes sociales y conoce a la comunidad Dog Training Club</p>
             </div>
             <div class="centered">
-              <a href="https://www.instagram.com/dogtrainingclub/"><img class="slogan-social-image" src="./images/Instagram_Icon_morado.png" /></a>
-              <a href="https://www.facebook.com/DogTrainingClubChile/"><img class="slogan-social-image" src="./images/Facebook_Icon_morado.png" /></a>
-              <a href="https://www.youtube.com/channel/UCWeaim0GlSOtQ7w9OABU0Zg"><img class="slogan-social-image" src="./images/Youtube_Icon_morado.png" /></a>
+              <a href="https://www.instagram.com/dogtrainingclub/">
+                <img class="slogan-social-image" src="./images/Instagram_Icon_morado.png" />
+              </a>
+              <a href="https://www.facebook.com/DogTrainingClubChile/">
+                <img class="slogan-social-image" src="./images/Facebook_Icon_morado.png" />
+              </a>
+              <a href="https://www.youtube.com/channel/UCWeaim0GlSOtQ7w9OABU0Zg">
+                <img class="slogan-social-image" src="./images/Youtube_Icon_morado.png" />
+              </a>
             </div>
           </div>
         </div>
@@ -123,10 +137,15 @@
     crossorigin="anonymous"></script>
   <script>
     (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-104100592-1', 'auto');
     ga('send', 'pageview');
@@ -146,6 +165,7 @@
         message: $('#message').val(),
         location: $('#santiago').is(':checked') ? 'santiago' : 'rancagua',
       };
+      console.log(data);
       if (data.name.length <= 2) {
         $('#warning p').text('El nombre debe tener mas de 2 caracteres');
         $('#warning').show('slow');
@@ -181,22 +201,20 @@
           });
       }
     });
-
   </script>
   <script type="application/ld+json">
     {
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "url": "http://dogtrainingclub.cl",
-  "name": "Centro de Adiestramiento y Pscologia Canina Dog Training Club",
-  "description": "Estamos trabajando para ofrecerte lo mejor en adiestramiento canino",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+56-9-6486-9870",
-    "contactType": "Customer service"
-  }
-}
-
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://dogtrainingclub.cl",
+      "name": "Centro de Adiestramiento y Pscologia Canina Dog Training Club",
+      "description": "Estamos trabajando para ofrecerte lo mejor en adiestramiento canino",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+56-9-6486-9870",
+        "contactType": "Customer service"
+      }
+    }
   </script>
 </body>
 

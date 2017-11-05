@@ -145,7 +145,7 @@ body {
 }
 
 .radio-input {
-  margin-right: 6px;
+  margin: 6px !important;
 }
 
 .radio-input-label {
