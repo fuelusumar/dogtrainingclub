@@ -15,8 +15,6 @@
     crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <meta name="google-site-verification" content="oyCQ2go_HxKJHZcvJ6LrwDK71KCBIp4bVSxBKU7JObI" />
 </head>
@@ -74,6 +72,11 @@
               <input class="form-control input" type="text" name="name" id="name" placeholder="Nombre Completo"></input>
               <input class="form-control input" type="email" name="email" id="email" placeholder="Correo Electronico"></input>
               <textarea class="form-control input" type="text" name="message" id="message" placeholder="Mensaje" rows="4"></textarea>
+              <input checked class="radio-input" type="radio" id="santiago" name="location" value="santiago">
+              <label class="radio-input-label" for="santiago">Santiago</label>
+              <input class="radio-input" type="radio" id="rancagua" name="location" value="rancagua">
+              <label class="radio-input-label" for="rancagua">Rancagua</label>
+              <br/>
               <button type="submit" class="btn btn-default input">Enviar</button>
             </form>
           </div>
@@ -128,7 +131,8 @@
       var data = {
         name: $('#name').val(),
         email: $('#email').val(),
-        message: $('#message').val()
+        message: $('#message').val(),
+        location: $('#santiago').is(':checked') ? 'santiago' : 'rancagua',
       };
       if (data.name.length <= 2) {
         $('#warning p').text('El nombre debe tener mas de 2 caracteres');
